@@ -1,0 +1,84 @@
+----------------------------------------------------------------------------------------------------------
+GateType   Output     GateLevel  #faninN    fanin                #fanoutM   fanout               GateName  
+
+DFF        BUFXG1XG11 0          1          BUFXG12XG1           1          BUFXG1XG11           XG1       
+
+DFF        BUFXG2XG5  0          1          BUFXG11XG2           1          BUFXG2XG5            XG2       
+
+DFF        BUFXG3XG6  0          1          BUFXG9XG3            1          BUFXG3XG6            XG3       
+
+NOT        BUFXG4XG5  1          1          G0                   2          BUFXG4XG5  BUFXG4XG12 XG4       
+
+AND        BUFXG5XG7  3          2          BUFXG2XG5  BUFXG4XG5 2          BUFXG5XG7  BUFXG5XG8 XG5       
+
+NOR        BUFXG6XG7  2          2          G1  BUFXG3XG6        2          BUFXG6XG7  BUFXG6XG9 XG6       
+
+OR         BUFXG7XG10 5          2          BUFXG5XG7  BUFXG6XG7 1          BUFXG7XG10           XG7       
+
+OR         BUFXG8XG10 5          2          G3  BUFXG5XG8        1          BUFXG8XG10           XG8       
+
+NOR        BUFXG9XG3  4          2          G2  BUFXG6XG9        1          BUFXG9XG3            XG9       
+
+NAND       BUFXG10XG11 7          2          BUFXG7XG10  BUFXG8XG10 1          BUFXG10XG11          XG10      
+
+NOR        BUFXG11XG2 9          2          BUFXG1XG11  BUFXG10XG11 3          BUFXG11XG2  BUFXG11XG12 BUFXG11XG13 XG11      
+
+NOR        BUFXG12XG1 11         2          BUFXG11XG12  BUFXG4XG12 1          BUFXG12XG1           XG12      
+
+NOT        G17        11         1          BUFXG11XG13          1          G17                  XG13      
+
+BUF        XG11       1          1          XG1                  1          XG11                 BUFXG1XG11
+
+BUF        XG5        1          1          XG2                  1          XG5                  BUFXG2XG5 
+
+BUF        XG6        1          1          XG3                  1          XG6                  BUFXG3XG6 
+
+BUF        XG7        4          1          XG5                  1          XG7                  BUFXG5XG7 
+
+BUF        XG8        4          1          XG5                  1          XG8                  BUFXG5XG8 
+
+BUF        XG11       8          1          XG10                 1          XG11                 BUFXG10XG11
+
+BUF        XG2        10         1          XG11                 1          XG2                  BUFXG11XG2
+
+BUF        XG12       10         1          XG11                 1          XG12                 BUFXG11XG12
+
+BUF        XG13       10         1          XG11                 1          XG13                 BUFXG11XG13
+
+BUF        XG1        12         1          XG12                 1          XG1                  BUFXG12XG1
+
+BUF        XG3        5          1          XG9                  1          XG3                  BUFXG9XG3 
+
+BUF        XG7        3          1          XG6                  1          XG7                  BUFXG6XG7 
+
+BUF        XG9        3          1          XG6                  1          XG9                  BUFXG6XG9 
+
+BUF        XG10       6          1          XG7                  1          XG10                 BUFXG7XG10
+
+BUF        XG5        2          1          XG4                  1          XG5                  BUFXG4XG5 
+
+BUF        XG12       2          1          XG4                  1          XG12                 BUFXG4XG12
+
+BUF        XG10       6          1          XG8                  1          XG10                 BUFXG8XG10
+
+----------------------------------------------------------------------------------------------------------
+Inputs: 0000
+State: 444
+OUTPUTS: 4
+
+Inputs: 0010
+State: 044
+OUTPUTS: 4
+
+Inputs: 0100
+State: 040
+OUTPUTS: 4
+
+Inputs: 1000
+State: 041
+OUTPUTS: 1
+
+Inputs: 1111
+State: 101
+OUTPUTS: 1
+
